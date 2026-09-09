@@ -22,18 +22,18 @@ This program is mainly supposed to be used for simple python programs.
 ```
 uv run scalesense samples/linear.py
 uv run scalesense samples/quadratic.py 300 1000 3000
-uv run scalesense myprogram.py 1000 10000 100000
+uv run scalesense myprogram.py 1000000 3000000 10000000 
 ```
 
 The first argument is the program. Any arguments after it are the input sizes to
-try. With no sizes given it uses 100000, 1000000, 10000000.
+try. With no sizes given it uses 1,000,000 , 3,000,000 , 10,000,000 
 
 ## Output
 
 ```
-Input    100000 -> 0.0068 sec
-Input   1000000 -> 0.0672 sec
-Input  10000000 -> 0.7010 sec
+Input   1000000 -> 0.0953 sec
+Input   3000000 -> 0.2975 sec
+Input  10000000 -> 0.9354 sec
 
 Growth: time = size ** 1.00
 Result: GOOD - the runtime grows about as fast as the input
