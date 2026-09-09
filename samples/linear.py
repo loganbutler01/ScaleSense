@@ -1,4 +1,4 @@
-"""O(n): one pass over the input size."""
+
 
 import sys
 

@@ -8,7 +8,7 @@ import time
 DEFAULT_SIZES = [1000000, 3000000, 10000000]
 RUNS_PER_SIZE = 3
 STARTUP_RUNS = 15  # startup is cheap to measure, and every size depends on it
-TIME_LIMIT = 10  # seconds allowed for a single run
+TIME_LIMIT = 60  # seconds allowed for a single run
 
 
 def run_and_time(command, runs=RUNS_PER_SIZE):
@@ -65,7 +65,6 @@ def main():
         except subprocess.TimeoutExpired:
             sys.exit(
                 f"\nSize {size} took longer than {TIME_LIMIT} seconds.\n"
-                f"Try smaller sizes:  scalecheck {program} 2000 4000 8000"
             )
         seconds = max(seconds, 0.000001)  # stay above zero for the math
         times.append(seconds)
@@ -88,14 +87,8 @@ def main():
         print(
             f"\nNote: the shortest run ({min(times):.4f} sec) was faster than Python's"
             f" own\nstartup ({startup:.4f} sec), so these numbers are rough."
-            " Try bigger sizes."
         )
 
-    if sizes[-1] / sizes[0] < 8:
-        print(
-            f"\nNote: the biggest size is only {sizes[-1] / sizes[0]:.0f}x the smallest,"
-            " so the exponent\nwill jump around. Spread them at least 10x apart."
-        )
 
 
 if __name__ == "__main__":

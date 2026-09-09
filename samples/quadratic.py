@@ -1,4 +1,4 @@
-"""O(n^2): nested loops. Use smaller sizes, e.g. -s 100 300 1000."""
+
 
 import sys
 
