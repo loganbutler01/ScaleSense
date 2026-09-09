@@ -1,4 +1,4 @@
-# scalecheck
+# ScaleSense
 
 Runs a Python program at increasing input sizes, times each run, and reports how
 fast the runtime grows compared to the input.
@@ -20,9 +20,9 @@ You can run the program in one of these 3 ways.
 This program is mainly supposed to be used for simple python programs.
 
 ```
-uv run scalecheck samples/linear.py
-uv run scalecheck samples/quadratic.py 300 1000 3000
-uv run scalecheck myprogram.py 1000 10000 100000
+uv run scalesense samples/linear.py
+uv run scalesense samples/quadratic.py 300 1000 3000
+uv run scalesense myprogram.py 1000 10000 100000
 ```
 
 The first argument is the program. Any arguments after it are the input sizes to
