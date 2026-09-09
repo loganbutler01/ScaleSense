@@ -1,0 +1,19 @@
+[project]
+name = "scalesense"
+version = "0.1.0"
+description = "Run a Python program at increasing input sizes and report how its runtime grows."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+scalesense = "scalecheck.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/scalecheck"]
